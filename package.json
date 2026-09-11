@@ -1,0 +1,20 @@
+{
+  "name": "retail-lab",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@11.19.0",
+  "scripts": {
+    "build": "pnpm build:api && pnpm build:web",
+    "build:api": "node scripts/maven.mjs -f apps/api/pom.xml clean verify",
+    "build:web": "pnpm --dir apps/web build",
+    "test": "pnpm test:api && pnpm test:web",
+    "test:api": "node scripts/maven.mjs -f apps/api/pom.xml test",
+    "test:web": "pnpm --dir apps/web test",
+    "dev:web": "pnpm --dir apps/web dev",
+    "dev:api": "node scripts/maven.mjs -f apps/api/pom.xml spring-boot:run"
+  },
+  "engines": {
+    "pnpm": "11.19.0",
+    "node": "^22.22.2 || ^24.15.0 || >=26.0.0"
+  }
+}

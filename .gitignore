@@ -1,0 +1,40 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Java / Maven
+apps/api/target/
+.m2/
+.mvn/timing.properties
+
+# Node / Vite
+node_modules/
+.pnpm-store/
+apps/web/dist/
+apps/web/.vite/
+*.tsbuildinfo
+apps/web/vite.config.js
+apps/web/vite.config.d.ts
+*.local
+
+# IDE and operating system
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Logs and coverage
+*.log
+coverage/
+# Additional build and IDE outputs
+target/
+dist/
+.vite/
+.classpath
+.project
+.settings/
+*.jks
+*.p12
+*.pem
