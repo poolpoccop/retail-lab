@@ -13,7 +13,7 @@ Monorepo de una tienda web de productos generales. Este primer hito contiene ún
 ## Estructura
 
 - `apps/api`: API REST con Spring Boot, Maven, PostgreSQL y Flyway.
-- `apps/web`: aplicación React, TypeScript y Vite.
+- `apps/web`: aplicación Next.js, React y TypeScript con App Router.
 - `docs`: requisitos, arquitectura y backlog inicial.
 
 ## Primeros pasos
@@ -50,7 +50,7 @@ pnpm dev:api
 pnpm dev:web
 ```
 
-La API escucha en `http://localhost:8080` y expone su health check en `/actuator/health`. Vite usa `http://localhost:5173` por defecto.
+La API escucha en `http://localhost:8080` y expone su health check en `/actuator/health`. Next.js usa `http://localhost:3000` por defecto.
 
 ## Despliegue previsto
 
@@ -83,7 +83,9 @@ pnpm dev:api
 
 En Bash usa export VARIABLE=valor. No se necesita ninguna variable para build y tests.
 POSTGRES_* describe el aprovisionamiento manual de PostgreSQL; la API usa DATABASE_*.
-VITE_API_URL se reserva para la futura integración: el frontend actual no consume la API.
-Cuando se utilice, expórtala antes de ejecutar Vite; las variables VITE_* son públicas.
+NEXT_PUBLIC_API_URL se reserva para la futura integración: el frontend actual no consume la API.
+Cuando se utilice, expórtala antes de ejecutar Next.js; las variables NEXT_PUBLIC_* son públicas.
+
+Next.js se limita a la interfaz web. Spring Boot es el backend compartido y conserva la lógica de dominio, persistencia y reglas transaccionales para clientes web y móviles.
 
 Ejecuta pnpm dev:web en otra terminal. Los servidores permanecen activos hasta Ctrl+C.
