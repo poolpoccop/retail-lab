@@ -6,7 +6,7 @@
 Navegador
    |
    v
-React + Vite (Vercel)
+Next.js + React (Vercel)
    |
    | HTTPS / JSON
    v
@@ -33,16 +33,18 @@ La estructura futura seguirá paquetes por capacidad (`catalog`, `cart`, `order`
 
 ## Frontend
 
-- React con TypeScript estricto.
-- Vite para desarrollo y build.
+- Next.js con React, TypeScript estricto y App Router.
+- Server Components por defecto; Client Components solo cuando la interacción lo requiera.
 - Vitest y Testing Library para pruebas.
-- `VITE_API_URL` se reserva para la URL pública de la API en tiempo de build; todavía no se consume.
+- `NEXT_PUBLIC_API_URL` se reserva para la URL pública de la API; todavía no se consume.
 
-El estado del carrito será inicialmente del cliente; la decisión sobre persistencia se tomará al diseñar el flujo de pedidos.
+Next.js actúa como interfaz web y no como un segundo backend de dominio. No aloja reglas de inventario, stock, concurrencia, pedidos, precios, pagos, persistencia ni autorización de negocio. Estas responsabilidades permanecen en la API Spring Boot para que puedan compartirse con futuros clientes móviles.
+
+El estado de presentación que sea exclusivamente local podrá residir en el cliente. Las decisiones sobre carrito y persistencia se tomarán al diseñar el flujo de pedidos sin trasladar reglas de negocio al frontend.
 
 ## Despliegue y configuración
 
-- Vercel sirve los activos estáticos del frontend.
+- Vercel aloja la aplicación Next.js.
 - Cloud Run ejecuta una única imagen de la API y usa el puerto indicado por `PORT`.
 - Neon ofrece PostgreSQL; la cadena JDBC y credenciales se inyectan como secretos del entorno de despliegue.
 - Ninguna credencial se almacena en el repositorio.

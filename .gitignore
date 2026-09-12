@@ -8,14 +8,12 @@ apps/api/target/
 .m2/
 .mvn/timing.properties
 
-# Node / Vite
+# Node / Next.js
 node_modules/
 .pnpm-store/
-apps/web/dist/
-apps/web/.vite/
+apps/web/.next/
+apps/web/out/
 *.tsbuildinfo
-apps/web/vite.config.js
-apps/web/vite.config.d.ts
 *.local
 
 # IDE and operating system
@@ -31,7 +29,8 @@ coverage/
 # Additional build and IDE outputs
 target/
 dist/
-.vite/
+.next/
+out/
 .classpath
 .project
 .settings/

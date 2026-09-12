@@ -34,7 +34,7 @@ Construir una tienda web de productos generales que permita explorar un catálog
 - No almacenar secretos en Git.
 - Builds y tests reproducibles desde la raíz.
 - API desplegable como contenedor en Cloud Run.
-- Frontend desplegable como sitio Vite en Vercel.
+- Frontend Next.js desplegable en Vercel.
 - Esquema versionado con Flyway.
 - Diseño responsive y accesible en los flujos que se implementen.
 
