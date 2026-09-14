@@ -35,6 +35,7 @@ La estructura futura seguirá paquetes por capacidad (`catalog`, `cart`, `order`
 
 - Next.js con React, TypeScript estricto y App Router.
 - Server Components por defecto; Client Components solo cuando la interacción lo requiera.
+- Tailwind CSS integrado mediante PostCSS para los estilos de la interfaz.
 - Vitest y Testing Library para pruebas.
 - `NEXT_PUBLIC_API_URL` se reserva para la URL pública de la API; todavía no se consume.
 
